@@ -1,0 +1,680 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f545538aede63129ea18c2bc9bb31a14",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2018-04-22T15:46:56+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "5.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "8560d4314577199ba51bf2032f02cd1315587c23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8560d4314577199ba51bf2032f02cd1315587c23",
+                "reference": "8560d4314577199ba51bf2032f02cd1315587c23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.1",
+                "json-schema/json-schema-test-suite": "1.2.0",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonSchema\\": "src/JsonSchema/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2018-02-14T22:26:30+00:00"
+        },
+        {
+            "name": "markguinn/silverstripe-cloudassets",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/markguinn/silverstripe-cloudassets.git",
+                "reference": "09a13837245ef083b9a8939047b7341301d34c20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/markguinn/silverstripe-cloudassets/zipball/09a13837245ef083b9a8939047b7341301d34c20",
+                "reference": "09a13837245ef083b9a8939047b7341301d34c20",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "suggest": {
+                "edlinklater/silverstripe-cloudassets-s3": "Amazon S3 bucker driver",
+                "markguinn/silverstripe-cloudassets-rackspace": "Rackspace bucket driver"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "cloudassets",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Guinn",
+                    "email": "mark@adaircreative.com",
+                    "homepage": "http://github.com/markguinn"
+                }
+            ],
+            "description": "Allows some or all of the assets folder to be located in a cloud storage container (CloudFiles, etc.)",
+            "keywords": [
+                "assets",
+                "cdn",
+                "cloud storage",
+                "cloudfiles",
+                "rackspace",
+                "silverstripe"
+            ],
+            "time": "2014-10-17T09:54:32+00:00"
+        },
+        {
+            "name": "mustangostang/spyc",
+            "version": "0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mustangostang/spyc.git",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Spyc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mustangostang",
+                    "email": "vlad.andersen@gmail.com"
+                }
+            ],
+            "description": "A simple YAML loader/dumper class for PHP",
+            "homepage": "https://github.com/mustangostang/spyc/",
+            "keywords": [
+                "spyc",
+                "yaml",
+                "yml"
+            ],
+            "time": "2017-02-24T16:06:33+00:00"
+        },
+        {
+            "name": "php-opencloud/openstack",
+            "version": "v3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-opencloud/openstack.git",
+                "reference": "2883c92cdfe05d4a11533497c2b74cc018c7cf0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-opencloud/openstack/zipball/2883c92cdfe05d4a11533497c2b74cc018c7cf0b",
+                "reference": "2883c92cdfe05d4a11533497c2b74cc018c7cf0b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.1",
+                "justinrainbow/json-schema": "~5.2",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.9",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "phpunit/phpunit": "^6.5",
+                "psr/log": "^1.0",
+                "sami/sami": "dev-master",
+                "satooshi/php-coveralls": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OpenStack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jamie Hannaford",
+                    "email": "jamie.hannaford@rackspace.com",
+                    "homepage": "https://github.com/jamiehannaford"
+                },
+                {
+                    "name": "Ha Phan",
+                    "email": "thanhha.work@gmail.com",
+                    "homepage": "https://github.com/haphan"
+                }
+            ],
+            "description": "PHP SDK for OpenStack APIs. Supports BlockStorage, Compute, Identity, Images, Networking and Metric Gnocchi",
+            "homepage": "https://github.com/php-opencloud/openstack",
+            "keywords": [
+                "Openstack",
+                "api",
+                "php",
+                "sdk"
+            ],
+            "time": "2018-03-13T10:03:02+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
+        },
+        {
+            "name": "silverstripe/framework",
+            "version": "3.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-framework.git",
+                "reference": "bd0141eb727d3d238aea914c8624b27ecd74971a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/bd0141eb727d3d238aea914c8624b27ecd74971a",
+                "reference": "bd0141eb727d3d238aea914c8624b27ecd74971a",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "mustangostang/spyc": "^0.6.2",
+                "php": "^5.3.3 || ^7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^3 || ^4 || ^5"
+            },
+            "type": "silverstripe-module",
+            "autoload": {
+                "psr-0": {
+                    "SilverStripe\\": "src/",
+                    "Zend_": "thirdparty/Zend/"
+                },
+                "classmap": [
+                    "tests/behat/features/bootstrap",
+                    "admin/code",
+                    "api",
+                    "cache",
+                    "cli",
+                    "control",
+                    "core",
+                    "dev",
+                    "email",
+                    "filesystem",
+                    "forms",
+                    "i18n",
+                    "model",
+                    "oembed",
+                    "parsers",
+                    "search",
+                    "security",
+                    "tasks",
+                    "view",
+                    "thirdparty/php-peg",
+                    "thirdparty/simpletest",
+                    "thirdparty/zend_translate_railsyaml"
+                ],
+                "exclude-from-classmap": [
+                    "view/SSTemplateParser.php.inc",
+                    "dev/phpunit/PhpUnitWrapper.php",
+                    "model/fieldtypes/compat",
+                    "core/compat"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "SilverStripe",
+                    "homepage": "http://silverstripe.com"
+                },
+                {
+                    "name": "The SilverStripe Community",
+                    "homepage": "http://silverstripe.org"
+                }
+            ],
+            "description": "The SilverStripe framework",
+            "homepage": "http://silverstripe.org",
+            "keywords": [
+                "framework",
+                "silverstripe"
+            ],
+            "time": "2018-11-07T10:22:05+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

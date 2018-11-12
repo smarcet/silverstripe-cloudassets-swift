@@ -1,0 +1,33 @@
+{
+  "name": "markguinn/silverstripe-cloudassets-swift",
+  "description": "Swift CloudFiles bucket driver for markguinn/silverstripe-cloudassets",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "assets",
+    "cdn",
+    "cloud storage",
+    "swift",
+    "cloudfiles",
+    "cloudassets"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian marcet",
+      "email": "smarcet@gmail.com",
+      "homepage": "http://github.com/smarcet"
+    }
+  ],
+  "extra": {
+    "installer-name": "cloudassets-swift",
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "require": {
+    "silverstripe/framework": "~3.1",
+    "markguinn/silverstripe-cloudassets": "~1.0",
+    "php-opencloud/openstack": "3.0.5"
+  }
+}
