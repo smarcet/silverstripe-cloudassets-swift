@@ -21,12 +21,10 @@ final class SwiftBucket extends CloudBucket
 {
 
     const CONTAINER   = 'Container';
-    const AUTH_URL    = 'AuthUrl';
     const REGION      = 'Region';
     const USERNAME    = 'Username';
     const API_KEY     = 'ApiKey';
     const PROJECT_ID  = 'ProjectID';
-    const FORCE_DL    = 'ForceDownload';
 
     /**
      * @var StorageObject
@@ -40,7 +38,7 @@ final class SwiftBucket extends CloudBucket
      * @param array  $cfg
      * @throws Exception
      */
-    public function __construct($path, array $cfg=array())
+    public function __construct($path, array $cfg=[])
     {
         parent::__construct($path, $cfg);
         if (empty($cfg[self::CONTAINER])) {
@@ -54,9 +52,6 @@ final class SwiftBucket extends CloudBucket
         }
         if (empty($cfg[self::API_KEY])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::API_KEY);
-        }
-        if (empty($cfg[self::AUTH_URL])) {
-            throw new Exception('SwiftBucket: missing configuration key - ' . self::AUTH_URL);
         }
         if (empty($cfg[self::PROJECT_ID])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::PROJECT_ID);
@@ -73,7 +68,7 @@ final class SwiftBucket extends CloudBucket
     {
         if (!isset($this->container)) {
             $openstack = new OpenStack([
-                'authUrl' => $this->config[self::AUTH_URL],
+                'authUrl' => $this->config[self::BASE_URL],
                 'region' => $this->config[self::REGION],
                 'user' => [
                     'id' => $this->config[self::USERNAME],
