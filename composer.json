@@ -1,5 +1,5 @@
 {
-  "name": "markguinn/silverstripe-cloudassets-swift",
+  "name": "smarcet/silverstripe-cloudassets-swift",
   "description": "Swift CloudFiles bucket driver for markguinn/silverstripe-cloudassets",
   "type": "silverstripe-module",
   "keywords": [
