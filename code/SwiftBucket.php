@@ -20,13 +20,14 @@ use GuzzleHttp\Psr7\Stream;
 final class SwiftBucket extends CloudBucket
 {
 
-    const CONTAINER    = 'Container';
-    const REGION       = 'Region';
-    const USERNAME     = 'Username';
-    const API_KEY      = 'ApiKey';
-    const PROJECT_NAME = 'ProjectName';
-    const USER_DOMAIN_ID = 'UserDomainId';
+    const CONTAINER         = 'Container';
+    const REGION            = 'Region';
+    const USERNAME          = 'Username';
+    const API_KEY           = 'ApiKey';
+    const PROJECT_NAME      = 'ProjectName';
+    const USER_DOMAIN_ID    = 'UserDomainId';
     const PROJECT_DOMAIN_ID = 'ProjectDomainId';
+    const AUTH_URL          = 'AuthURL';
 
     /**
      * @var StorageObject
@@ -64,6 +65,10 @@ final class SwiftBucket extends CloudBucket
             throw new Exception('SwiftBucket: missing configuration key - ' . self::PROJECT_NAME);
         }
 
+        if (empty($cfg[self::AUTH_URL])) {
+            throw new Exception('SwiftBucket: missing configuration key - ' . self::AUTH_URL);
+        }
+
         $this->containerName = $this->config[self::CONTAINER];
     }
 
@@ -75,7 +80,7 @@ final class SwiftBucket extends CloudBucket
     {
         if (!isset($this->container)) {
             $openstack = new OpenStack([
-                'authUrl' => $this->config[self::BASE_URL],
+                'authUrl' => $this->config[self::AUTH_URL],
                 'region' => $this->config[self::REGION],
                 'user' => [
                     'name' => $this->config[self::USERNAME],
@@ -92,6 +97,7 @@ final class SwiftBucket extends CloudBucket
 
             $this->container = $openstack->objectStoreV1()->getContainer($this->containerName);
         }
+
         return $this->container;
     }
 
@@ -108,11 +114,12 @@ final class SwiftBucket extends CloudBucket
         }
 
         $options = [
-            'name'   => $f->getFilename(),
-            'stream' => new Stream($fp),
+            'name'   =>  $this->getRelativeLinkFor($f),
+            'stream' =>  new Stream($fp)
         ];
 
-        $this->getContainer()->createLargeObject($options);
+        $res = $this->getContainer()->createObject($options);
+        return  $res;
     }
 
     /**
