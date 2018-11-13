@@ -20,11 +20,13 @@ use GuzzleHttp\Psr7\Stream;
 final class SwiftBucket extends CloudBucket
 {
 
-    const CONTAINER   = 'Container';
-    const REGION      = 'Region';
-    const USERNAME    = 'Username';
-    const API_KEY     = 'ApiKey';
-    const PROJECT_ID  = 'ProjectID';
+    const CONTAINER    = 'Container';
+    const REGION       = 'Region';
+    const USERNAME     = 'Username';
+    const API_KEY      = 'ApiKey';
+    const PROJECT_NAME = 'ProjectName';
+    const USER_DOMAIN_ID = 'UserDomainId';
+    const PROJECT_DOMAIN_ID = 'ProjectDomainId';
 
     /**
      * @var StorageObject
@@ -41,20 +43,25 @@ final class SwiftBucket extends CloudBucket
     public function __construct($path, array $cfg=[])
     {
         parent::__construct($path, $cfg);
+
         if (empty($cfg[self::CONTAINER])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::CONTAINER);
         }
+
         if (empty($cfg[self::REGION])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::REGION);
         }
+
         if (empty($cfg[self::USERNAME])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::USERNAME);
         }
+
         if (empty($cfg[self::API_KEY])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::API_KEY);
         }
-        if (empty($cfg[self::PROJECT_ID])) {
-            throw new Exception('SwiftBucket: missing configuration key - ' . self::PROJECT_ID);
+
+        if (empty($cfg[self::PROJECT_NAME])) {
+            throw new Exception('SwiftBucket: missing configuration key - ' . self::PROJECT_NAME);
         }
 
         $this->containerName = $this->config[self::CONTAINER];
@@ -71,10 +78,16 @@ final class SwiftBucket extends CloudBucket
                 'authUrl' => $this->config[self::BASE_URL],
                 'region' => $this->config[self::REGION],
                 'user' => [
-                    'id' => $this->config[self::USERNAME],
-                    'password' => $this->config[self::API_KEY]
+                    'name' => $this->config[self::USERNAME],
+                    'password' => $this->config[self::API_KEY],
+                    'domain' => ['id' => isset($this->config[self::USER_DOMAIN_ID]) ? $this->config[self::USER_DOMAIN_ID] : 'default']
                 ],
-                'scope' => ['project' => ['id' => $this->config[self::PROJECT_ID]]]
+                'scope' => [
+                    'project' => [
+                        'name' => $this->config[self::PROJECT_NAME],
+                        'domain' => ['id' => isset($this->config[self::PROJECT_DOMAIN_ID]) ? $this->config[self::PROJECT_DOMAIN_ID] : 'default']
+                    ],
+                ]
             ]);
 
             $this->container = $openstack->objectStoreV1()->getContainer($this->containerName);
@@ -95,7 +108,7 @@ final class SwiftBucket extends CloudBucket
         }
 
         $options = [
-            'name'   => 'object_name.txt',
+            'name'   => $f->getFilename(),
             'stream' => new Stream($fp),
         ];
 
