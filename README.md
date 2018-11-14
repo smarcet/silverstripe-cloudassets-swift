@@ -32,13 +32,16 @@ name: assetsconfig
 ---
 CloudAssets:
   map:
-    'assets/Uploads':
+    'assets':
       Type: SwiftBucket
       BaseURL: 'http://yourcdnbaseurl.com/'
       Container: site-uploads
-      Region: ORD
+      Region: Region Name
       Username: yourlogin
+      UserDomainId: user domain id (default)
       ApiKey: yourkey
-      ProjectId: yourProjectId
+      ProjectName: your project name
+      AuthURL: keystone base url 
+      ProjectDomainId: project domain id (default)
       LocalCopy: false     
 ```
