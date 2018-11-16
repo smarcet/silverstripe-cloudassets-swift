@@ -141,8 +141,8 @@ final class SwiftBucket extends CloudBucket
      */
     public function rename(File $f, $beforeName, $afterName)
     {
-        $obj = $this->getFileObjectFor($this->getRelativeLinkFor($beforeName));
-        $obj->copy($this->containerName . '/' . $this->getRelativeLinkFor($afterName));
+        $obj = $this->getFileObjectFor($beforeName);
+        $obj->copy(['destination' => $this->containerName . '/' . $this->getRelativeLinkFor($afterName)]);
         $obj->delete();
     }
 
@@ -152,18 +152,19 @@ final class SwiftBucket extends CloudBucket
      */
     public function getContents(File $f)
     {
-        $obj = $this->getContainer()->getObject($this->getRelativeLinkFor($f));
+        $obj = $this->getFileObjectFor($f);
         $stream = $obj->download();
         return $stream->getContents();
     }
 
     /**
-     * @param File$f
+     * @param File|string $f
      * @return StorageObject
      */
-    protected function getFileObjectFor(File $f)
+    protected function getFileObjectFor($f)
     {
-        return $this->getContainer()->getObject($this->getRelativeLinkFor($f));
+        $name = $this->getRelativeLinkFor($f);
+        return $this->getContainer()->getObject($name);
     }
 
     /**
