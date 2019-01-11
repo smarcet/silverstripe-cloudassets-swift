@@ -26,7 +26,9 @@ Example
 Assuming you have a CloudFiles container called site-uploads:
 
 *mysite/_config/cloudassets.yml:*
-```
+
+````yaml
+
 ---
 name: assetsconfig
 ---
@@ -44,4 +46,28 @@ CloudAssets:
       AuthURL: keystone base url 
       ProjectDomainId: project domain id (default)
       LocalCopy: false     
-```
+````
+
+OR using application credentials
+
+* https://docs.openstack.org/keystone/rocky/user/application_credentials.html
+
+
+```yaml
+
+---
+name: assetsconfig
+---
+CloudAssets:
+  map:
+    'assets':
+      Type: SwiftBucket
+      BaseURL: 'http://yourcdnbaseurl.com/'
+      Container: site-uploads
+      Region: Region Name
+      ApplicationCredentialId: application credential id
+      ApplicationCredentialSecret: application credential secret
+      ProjectName: your project name
+      AuthURL: keystone base url 
+      LocalCopy: false     
+````

@@ -28,6 +28,8 @@ final class SwiftBucket extends CloudBucket
     const USER_DOMAIN_ID    = 'UserDomainId';
     const PROJECT_DOMAIN_ID = 'ProjectDomainId';
     const AUTH_URL          = 'AuthURL';
+    const APP_CRED_ID       = 'ApplicationCredentialId';
+    const APP_CRED_SECRET   = 'ApplicationCredentialSecret';
 
     /**
      * @var StorageObject
@@ -53,20 +55,35 @@ final class SwiftBucket extends CloudBucket
             throw new Exception('SwiftBucket: missing configuration key - ' . self::REGION);
         }
 
-        if (empty($cfg[self::USERNAME])) {
-            throw new Exception('SwiftBucket: missing configuration key - ' . self::USERNAME);
-        }
-
-        if (empty($cfg[self::API_KEY])) {
-            throw new Exception('SwiftBucket: missing configuration key - ' . self::API_KEY);
-        }
-
         if (empty($cfg[self::PROJECT_NAME])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::PROJECT_NAME);
         }
 
         if (empty($cfg[self::AUTH_URL])) {
             throw new Exception('SwiftBucket: missing configuration key - ' . self::AUTH_URL);
+        }
+
+        $userPassword = true;
+        $applicationCredentials = true;
+
+        if (empty($cfg[self::USERNAME])) {
+            $userPassword = false;
+        }
+
+        if (empty($cfg[self::API_KEY])) {
+            $userPassword = false;
+        }
+
+        if (empty($cfg[self::APP_CRED_ID])) {
+            $applicationCredentials = false;
+        }
+
+        if (empty($cfg[self::APP_CRED_SECRET])) {
+            $applicationCredentials = false;
+        }
+
+        if(!$userPassword && !$applicationCredentials){
+            throw new Exception('SwiftBucket: You must provided some credentials: User Credentials  OR Application Credentials');
         }
 
         $this->containerName = $this->config[self::CONTAINER];
@@ -79,21 +96,34 @@ final class SwiftBucket extends CloudBucket
     protected function getContainer()
     {
         if (!isset($this->container)) {
-            $openstack = new OpenStack([
+            $configOptions = [
                 'authUrl' => $this->config[self::AUTH_URL],
                 'region' => $this->config[self::REGION],
-                'user' => [
+            ];
+
+            if(isset($this->config[self::USERNAME])){
+                $configOptions['user'] = [
                     'name' => $this->config[self::USERNAME],
                     'password' => $this->config[self::API_KEY],
                     'domain' => ['id' => isset($this->config[self::USER_DOMAIN_ID]) ? $this->config[self::USER_DOMAIN_ID] : 'default']
-                ],
-                'scope' => [
+                ];
+
+                $configOptions['scope' ] =  [
                     'project' => [
                         'name' => $this->config[self::PROJECT_NAME],
                         'domain' => ['id' => isset($this->config[self::PROJECT_DOMAIN_ID]) ? $this->config[self::PROJECT_DOMAIN_ID] : 'default']
                     ],
-                ]
-            ]);
+                ];
+            }
+
+            if(isset($this->config[self::APP_CRED_ID])){
+                $configOptions['application_credential'] = [
+                    'id' => $this->config[self::APP_CRED_ID],
+                    'secret' => $this->config[self::APP_CRED_SECRET],
+                ];
+            }
+
+            $openstack = new OpenStack($configOptions);
 
             $this->container = $openstack->objectStoreV1()->getContainer($this->containerName);
         }

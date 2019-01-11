@@ -1,6 +1,12 @@
 {
   "name": "smarcet/silverstripe-cloudassets-swift",
   "description": "Swift CloudFiles bucket driver for markguinn/silverstripe-cloudassets",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/OpenStackweb/openstack"
+    }
+  ],
   "type": "silverstripe-module",
   "keywords": [
     "silverstripe",
@@ -28,6 +34,6 @@
   "require": {
     "silverstripe/framework": "~3.1",
     "markguinn/silverstripe-cloudassets": "~1.0",
-    "php-opencloud/openstack": "3.0.5"
+    "php-opencloud/openstack": "dev-master"
   }
 }
