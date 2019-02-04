@@ -5,6 +5,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/OpenStackweb/openstack"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/smarcet/silverstripe-cloudassets"
     }
   ],
   "type": "silverstripe-module",
@@ -33,7 +37,7 @@
   },
   "require": {
     "silverstripe/framework": "~3.1",
-    "markguinn/silverstripe-cloudassets": "~1.0",
+    "markguinn/silverstripe-cloudassets": "dev-master",
     "php-opencloud/openstack": "dev-master"
   }
 }

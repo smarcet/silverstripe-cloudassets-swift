@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "15c2d070f36924acc08264b86c9149ac",
+    "content-hash": "a9ab34e8cc93342d765e56fbf3376800",
     "packages": [
         {
             "name": "composer/installers",
@@ -311,23 +311,23 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.7",
+            "version": "5.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23"
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8560d4314577199ba51bf2032f02cd1315587c23",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.1",
+                "friendsofphp/php-cs-fixer": "~2.2.20",
                 "json-schema/json-schema-test-suite": "1.2.0",
                 "phpunit/phpunit": "^4.8.35"
             },
@@ -373,24 +373,24 @@
                 "json",
                 "schema"
             ],
-            "time": "2018-02-14T22:26:30+00:00"
+            "time": "2019-01-14T23:55:14+00:00"
         },
         {
             "name": "markguinn/silverstripe-cloudassets",
-            "version": "1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/markguinn/silverstripe-cloudassets.git",
-                "reference": "09a13837245ef083b9a8939047b7341301d34c20"
+                "url": "https://github.com/smarcet/silverstripe-cloudassets.git",
+                "reference": "2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/markguinn/silverstripe-cloudassets/zipball/09a13837245ef083b9a8939047b7341301d34c20",
-                "reference": "09a13837245ef083b9a8939047b7341301d34c20",
+                "url": "https://api.github.com/repos/smarcet/silverstripe-cloudassets/zipball/2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87",
+                "reference": "2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87",
                 "shasum": ""
             },
             "require": {
-                "silverstripe/framework": "~3.1"
+                "silverstripe/framework": ">=3.1"
             },
             "suggest": {
                 "edlinklater/silverstripe-cloudassets-s3": "Amazon S3 bucker driver",
@@ -400,10 +400,10 @@
             "extra": {
                 "installer-name": "cloudassets",
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev",
+                    "1.0.1": "1.0.x-dev"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -423,7 +423,10 @@
                 "rackspace",
                 "silverstripe"
             ],
-            "time": "2014-10-17T09:54:32+00:00"
+            "support": {
+                "source": "https://github.com/smarcet/silverstripe-cloudassets/tree/master"
+            },
+            "time": "2019-02-04T18:39:29+00:00"
         },
         {
             "name": "mustangostang/spyc",
@@ -481,12 +484,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/OpenStackweb/openstack.git",
-                "reference": "ed23384532b7a984fc7d8df8d0216dfb94ca1732"
+                "reference": "eafc3de006ad505355556c0d2f3c4af2c6b5a44e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OpenStackweb/openstack/zipball/ed23384532b7a984fc7d8df8d0216dfb94ca1732",
-                "reference": "ed23384532b7a984fc7d8df8d0216dfb94ca1732",
+                "url": "https://api.github.com/repos/OpenStackweb/openstack/zipball/eafc3de006ad505355556c0d2f3c4af2c6b5a44e",
+                "reference": "eafc3de006ad505355556c0d2f3c4af2c6b5a44e",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +547,7 @@
             "support": {
                 "source": "https://github.com/OpenStackweb/openstack/tree/master"
             },
-            "time": "2019-01-11T16:48:14+00:00"
+            "time": "2019-02-04T18:27:20+00:00"
         },
         {
             "name": "psr/http-message",
@@ -722,6 +725,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "markguinn/silverstripe-cloudassets": 20,
         "php-opencloud/openstack": 20
     },
     "prefer-stable": false,
