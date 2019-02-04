@@ -172,6 +172,8 @@ final class SwiftBucket extends CloudBucket
     public function rename(File $f, $beforeName, $afterName)
     {
         $obj = $this->getFileObjectFor($beforeName);
+        if(is_null($obj))
+            throw new Exception("obj is null!!");
         $obj->copy(['destination' => $this->containerName . '/' . $this->getRelativeLinkFor($afterName)]);
         $obj->delete();
     }
@@ -183,7 +185,11 @@ final class SwiftBucket extends CloudBucket
     public function getContents(File $f)
     {
         $obj = $this->getFileObjectFor($f);
+        if(is_null($obj))
+            return null;
         $stream = $obj->download();
+        if(is_null($stream))
+            return null;
         return $stream->getContents();
     }
 
@@ -198,14 +204,16 @@ final class SwiftBucket extends CloudBucket
     }
 
     /**
-     * @param File $f
+     * @param File|string $f
      * @return int
      */
-    public function getFileSize(File $f)
+    public function getFileSize($f)
     {
         $obj = $this->getFileObjectFor($f);
-        $metadata =  $obj->getMetadata();
-        return isset($metadata['content-length']) ? $metadata['content-length'] : 0;
+        if(is_null($obj))
+            return null;
+        $obj->getMetadata();
+        return $obj->contentLength;
     }
 
     /**
@@ -215,6 +223,8 @@ final class SwiftBucket extends CloudBucket
     public function getPublicURLFor($f)
     {
         $obj = $this->getFileObjectFor($f);
+        if(is_null($obj))
+            return null;
         return $obj->getPublicUri();
     }
 }
