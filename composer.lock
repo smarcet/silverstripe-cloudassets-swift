@@ -381,12 +381,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarcet/silverstripe-cloudassets.git",
-                "reference": "2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87"
+                "reference": "ffd91645cd7019a083632b59b19c90025525c1c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarcet/silverstripe-cloudassets/zipball/2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87",
-                "reference": "2ecc0dfc147e2ef71b0386f3dbb7c58fede98e87",
+                "url": "https://api.github.com/repos/smarcet/silverstripe-cloudassets/zipball/ffd91645cd7019a083632b59b19c90025525c1c0",
+                "reference": "ffd91645cd7019a083632b59b19c90025525c1c0",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +426,7 @@
             "support": {
                 "source": "https://github.com/smarcet/silverstripe-cloudassets/tree/master"
             },
-            "time": "2019-02-04T18:39:29+00:00"
+            "time": "2019-02-26T17:01:37+00:00"
         },
         {
             "name": "mustangostang/spyc",
@@ -641,16 +641,16 @@
         },
         {
             "name": "silverstripe/framework",
-            "version": "3.7.2",
+            "version": "3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "bd0141eb727d3d238aea914c8624b27ecd74971a"
+                "reference": "bb5701b73d40909caf99d71bac02e0329d301335"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/bd0141eb727d3d238aea914c8624b27ecd74971a",
-                "reference": "bd0141eb727d3d238aea914c8624b27ecd74971a",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/bb5701b73d40909caf99d71bac02e0329d301335",
+                "reference": "bb5701b73d40909caf99d71bac02e0329d301335",
                 "shasum": ""
             },
             "require": {
@@ -718,7 +718,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2018-11-07T10:22:05+00:00"
+            "time": "2019-02-12T08:44:41+00:00"
         }
     ],
     "packages-dev": [],
