@@ -139,19 +139,21 @@ final class SwiftBucket extends CloudBucket
      */
     public function put(File $f)
     {
+        $path = $f->getFullPath();
+
         $options = [
             'name'   => $this->getRelativeLinkFor($f),
         ];
 
-        if($f instanceof CloudFolder){
+        if(is_dir($path)){
             // if the object to add its a folder
             // need to add trailing / in order to create the folder at object storage
             $options['name'] = $options['name'].'/';
         }
 
-        if($f instanceof CloudFile) {
+        if(is_file($path)) {
             // if we are uploading a file then set content
-            $fp = fopen($f->getFullPath(), 'r');
+            $fp = fopen($path, 'r');
             if (!$fp) {
                 throw new Exception("Unable to open file: " . $f->getFilename());
             }
