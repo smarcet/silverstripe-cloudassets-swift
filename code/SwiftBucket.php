@@ -145,7 +145,7 @@ final class SwiftBucket extends CloudBucket
             'name'   => $this->getRelativeLinkFor($f),
         ];
 
-        if(is_dir($path)){
+        if($f instanceof CloudFolder){
             // if the object to add its a folder
             // need to add trailing / in order to create the folder at object storage
             $options['name'] = $options['name'].'/';
