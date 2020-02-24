@@ -36,7 +36,7 @@
     }
   },
   "require": {
-    "silverstripe/framework": "~3.1",
+    "silverstripe/framework": "~4.4",
     "markguinn/silverstripe-cloudassets": "dev-master",
     "php-opencloud/openstack": "dev-master"
   }
